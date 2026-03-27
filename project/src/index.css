@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 259 94% 51%;
+    --primary-light: 259 94% 61%;
+    --primary-dark: 259 94% 41%;
+    
+    --secondary: 196 100% 50%;
+    --secondary-light: 196 100% 60%;
+    --secondary-dark: 196 100% 40%;
+    
+    --accent: 316 100% 55%;
+    --accent-light: 316 100% 65%;
+    --accent-dark: 316 100% 45%;
+    
+    --success: 142 76% 45%;
+    --warning: 38 92% 50%;
+    --error: 0 91% 58%;
+    
+    --surface: 240 10% 4%;
+    --surface-light: 240 10% 10%;
+    --surface-dark: 240 10% 2%;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-50 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 
+           hover:from-indigo-500 hover:to-violet-500 
+           px-6 py-3 font-semibold text-white shadow-lg 
+           transition-all duration-300 ease-out 
+           hover:shadow-indigo-500/20 hover:shadow-xl hover:scale-105 focus:outline-none;
+  }
+  
+  .btn-secondary {
+    @apply rounded-full bg-gray-800 hover:bg-gray-700 
+           border border-indigo-500/30
+           px-6 py-3 font-semibold text-white shadow-lg 
+           transition-all duration-300 ease-out 
+           hover:shadow-indigo-500/10 hover:border-indigo-500/60 focus:outline-none;
+  }
+  
+  .glass-card {
+    @apply bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl 
+           shadow-xl shadow-indigo-900/10 hover:shadow-indigo-700/20
+           transition-all duration-500;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400;
+}
+
+.text-gradient-accent {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-400;
+}
+
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+}
